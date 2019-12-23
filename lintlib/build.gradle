@@ -9,3 +9,5 @@ jar {
 dependencies {
     compileOnly "com.android.tools.lint:lint-api:26.1.4"
 }
+
+
