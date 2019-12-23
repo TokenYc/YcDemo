@@ -1,0 +1,2 @@
+include ':app', ':lintlib', ':lint_test_lib'
+rootProject.name='YcDemo'

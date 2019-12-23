@@ -1,0 +1,76 @@
+apply plugin: 'com.mob.sdk'
+MobSDK {
+
+//    使用gradle设置appid和secret，可能gradle将该字符串编译成科学计数，因此使用application中的MobSDK.init方式进行初始化。
+//    appKey "16ae86c47b4f0"
+//    appSecret "067cf65809e1cec3fa1514358fe46949"
+
+    permissions {
+        exclude "android.permission.RECEIVE_SMS"
+        exclude "android.permission.BLUETOOTH"
+    }
+
+    MobLink {
+        //version = "2.2.5"
+        uriScheme "qianfanyidong://com.qianfanyidong.forum"
+        appLinkHost "5t2m.t4m.cn"
+    }
+
+    ShareSDK {
+        devInfo {
+            SinaWeibo {
+                id 1
+                sortId 1
+                appKey "wx0dac4b8f01249b8c"
+                appSecret "39118f65273b65032c5a4041b2dbcc43"
+                callbackUri "https://bbs1.qianfanyun.com"
+                shareByAppClient true
+                enable true
+            }
+            QQ {
+                id 2
+                sortId 2
+                appId "1105272909"
+                appKey "zMSY9OQ0Z9F1DAfi"
+                shareByAppClient true
+                enable true
+            }
+            QZone {
+                id 3
+                sortId 3
+                appId "1105272909"
+                appKey "zMSY9OQ0Z9F1DAfi"
+                shareByAppClient true
+                enable true
+            }
+            Wechat {
+                id 4
+                sortId 4
+                appId "wx0dac4b8f01249b8c"
+                appSecret "cdea45f75d119f3afebc5124e955e136"
+                bypassApproval false
+                enable true
+            }
+            WechatMoments {
+                id 5
+                sortId 5
+                appId "wxce00ff96d4b4c0d4"
+                appSecret "2c2aaa2e7be61aa7343db7be1c605802"
+                bypassApproval false
+                enable true
+            }
+            WechatFavorite {
+                id 6
+                sortId 6
+                appId "wxce00ff96d4b4c0d4"
+                appSecret "2c2aaa2e7be61aa7343db7be1c605802"
+                enable true
+            }
+            Email {
+                id 7
+                sortId 7
+                enable false
+            }
+        }
+    }
+}
