@@ -1,19 +1,17 @@
 package com.qianfanyun.ycdemo.CoordinatorLayout
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.webkit.WebViewClient
 import com.qianfanyun.ycdemo.R
-import kotlinx.android.synthetic.main.activity_coordinator_layout.*
+import kotlinx.android.synthetic.main.activity_coordinator_layout2.*
 
 class CoordinatorLayoutActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_coordinator_layout)
-        webview.webViewClient = WebViewClient()
-        webview.settings.javaScriptEnabled = true
-        webview.loadUrl("https://qianfan3.qianfanapi.com/fenlei/sort/get-sort-list")
-        //https://qianfan3.qianfanapi.com/fenlei/sort/get-sort-list
+        setContentView(R.layout.activity_coordinator_layout2)
+        tv_webview.setOnClickListener { startActivity(Intent(this,CoordinatorLayoutActivity::class.java)) }
+        tv_nest.setOnClickListener { startActivity(Intent(this,CoordinatorNestActivity::class.java)) }
     }
 }

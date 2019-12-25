@@ -15,6 +15,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -30,10 +31,15 @@ android {
             dirs 'libs'
         }
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.multidex:multidex:2.0.1'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.appcompat:appcompat:1.0.2'
     api 'com.google.android.material:material:1.2.0-alpha02'
@@ -50,11 +56,9 @@ dependencies {
     //同盾------------------结束-----------------
 
 
-
     //bugly------------------开始-----------------
     implementation 'com.tencent.bugly:crashreport:3.1.0'
     //------------------结束-----------------
-
 
 
     //友盟------------------开始-----------------
@@ -84,7 +88,6 @@ dependencies {
     //友盟------------------结束-----------------
 
 
-
     //环信------------------开始-----------------
     api files('libs/hyphenatechat_3.6.0.jar')
     //环信------------------结束-----------------
@@ -97,4 +100,5 @@ dependencies {
     //百度地图----------开始--------
     implementation files('libs/BaiduLBS_Android.jar')
     //百度地图----------结束-----------
+
 }

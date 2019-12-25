@@ -1,13 +1,11 @@
 package com.qianfanyun.ycdemo
 
-import android.app.AlarmManager
-import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.telephony.TelephonyManager
-import com.qianfanyun.lint_test_lib.DeviceUtils
+import androidx.coordinatorlayout.widget.CoordinatorLayout
 import com.qianfanyun.ycdemo.CoordinatorLayout.CoordinatorLayoutActivity
+import com.qianfanyun.ycdemo.CoordinatorLayout.CoordinatorLayoutWebviewActivity
 import com.qianfanyun.ycdemo.NestedScroll.NestedScrollActivity
 import kotlinx.android.synthetic.main.activity_main.*
 

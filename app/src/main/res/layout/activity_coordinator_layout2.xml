@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".CoordinatorLayout.CoordinatorLayoutActivity">
+
+    <TextView
+        android:id="@+id/tv_webview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="#E2DFDF"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="WebviewCoordinatorLayout" />
+
+    <TextView
+        android:id="@+id/tv_nest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="#E2DFDF"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="CoordinatorNestActivity" />
+</LinearLayout>
