@@ -14,10 +14,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:allowBackup">
-        <activity android:name=".CoordinatorLayout.CoordinatorNestActivity"></activity>
+        <activity android:name=".CoordinatorLayout.nested.CoordinatorNestActivity"></activity>
         <activity android:name=".CoordinatorLayout.CoordinatorLayoutActivity" />
         <activity android:name=".NestedScroll.NestedScrollActivity" />
-        <activity android:name=".CoordinatorLayout.CoordinatorLayoutWebviewActivity" />
+        <activity android:name=".CoordinatorLayout.webview.CoordinatorLayoutWebviewActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

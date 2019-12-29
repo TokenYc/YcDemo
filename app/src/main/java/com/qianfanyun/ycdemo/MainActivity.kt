@@ -3,9 +3,7 @@ package com.qianfanyun.ycdemo
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.coordinatorlayout.widget.CoordinatorLayout
 import com.qianfanyun.ycdemo.CoordinatorLayout.CoordinatorLayoutActivity
-import com.qianfanyun.ycdemo.CoordinatorLayout.CoordinatorLayoutWebviewActivity
 import com.qianfanyun.ycdemo.NestedScroll.NestedScrollActivity
 import kotlinx.android.synthetic.main.activity_main.*
 

@@ -1,4 +1,4 @@
-package com.qianfanyun.ycdemo.CoordinatorLayout
+package com.qianfanyun.ycdemo.CoordinatorLayout.webview
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
