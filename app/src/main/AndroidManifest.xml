@@ -14,7 +14,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:allowBackup">
-        <activity android:name=".CoordinatorLayout.simple_behavior.SimpleBehaviorActivity"></activity>
+        <activity android:name=".CoordinatorLayout.appbarlayout.AppBarLayoutActivity"></activity>
+        <activity android:name=".CoordinatorLayout.simple_behavior.SimpleBehaviorActivity" />
         <activity android:name=".CoordinatorLayout.nested.CoordinatorNestActivity" />
         <activity android:name=".CoordinatorLayout.CoordinatorLayoutActivity" />
         <activity android:name=".NestedScroll.NestedScrollActivity" />

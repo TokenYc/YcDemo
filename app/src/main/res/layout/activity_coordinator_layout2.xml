@@ -36,4 +36,14 @@
         android:gravity="center"
         android:padding="10dp"
         android:text="SimpleBehaviorActivity" />
+
+    <TextView
+        android:id="@+id/tv_appbarlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="#E2DFDF"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="AppBarLayoutActivity" />
 </LinearLayout>

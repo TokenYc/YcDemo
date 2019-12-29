@@ -3,6 +3,7 @@ package com.qianfanyun.ycdemo.CoordinatorLayout
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.qianfanyun.ycdemo.CoordinatorLayout.appbarlayout.AppBarLayoutActivity
 import com.qianfanyun.ycdemo.CoordinatorLayout.nested.CoordinatorNestActivity
 import com.qianfanyun.ycdemo.CoordinatorLayout.simple_behavior.SimpleBehaviorActivity
 import com.qianfanyun.ycdemo.R
@@ -34,6 +35,14 @@ class CoordinatorLayoutActivity : AppCompatActivity() {
                 Intent(
                     this,
                     SimpleBehaviorActivity::class.java
+                )
+            )
+        }
+        tv_appbarlayout.setOnClickListener {
+            startActivity(
+                Intent(
+                    this,
+                    AppBarLayoutActivity::class.java
                 )
             )
         }
