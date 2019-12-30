@@ -10,14 +10,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <TextView
+        <ImageView
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            app:layout_scrollFlags="scroll"
-            android:text="AppBarLayout"
-            android:textColor="#ffffff"
-            android:gravity="center"
-            android:background="#E49E9E" />
+            android:layout_height="260dp"
+            android:scaleType="center"
+            android:src="@mipmap/ice"
+            app:layout_scrollFlags="scroll" />
     </com.google.android.material.appbar.AppBarLayout>
 
     <com.qianfanyun.ycdemo.CoordinatorLayout.nested.NestedCoordinatorLayout
@@ -25,17 +23,17 @@
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
+
         <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            <TextView
+
+            <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                app:layout_scrollFlags="scroll"
-                android:text="AppBarLayout"
-                android:textColor="#ffffff"
-                android:gravity="center"
-                android:background="#975252" />
+                android:layout_height="260dp"
+                android:scaleType="center"
+                android:src="@mipmap/girl"
+                app:layout_scrollFlags="scroll" />
         </com.google.android.material.appbar.AppBarLayout>
 
         <androidx.core.widget.NestedScrollView
@@ -44,19 +42,13 @@
             android:fillViewport="true"
             app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-            <LinearLayout
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="3000dp"
-                    android:background="#CAA448"
-                    android:text="ScrollView"
-                    android:textColor="#ffffff"
-                    android:gravity="center"
-                    />
-            </LinearLayout>
+                android:lineSpacingExtra="2dp"
+                android:padding="5dp"
+                android:text="@string/many_text"
+                android:textSize="16sp" />
 
         </androidx.core.widget.NestedScrollView>
     </com.qianfanyun.ycdemo.CoordinatorLayout.nested.NestedCoordinatorLayout>
