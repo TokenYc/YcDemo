@@ -24,7 +24,7 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
 
-        <com.google.android.material.appbar.AppBarLayout
+        <com.qianfanyun.ycdemo.CoordinatorLayout.nested.NestedAppBarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -34,7 +34,7 @@
                 android:scaleType="center"
                 android:src="@mipmap/girl"
                 app:layout_scrollFlags="scroll" />
-        </com.google.android.material.appbar.AppBarLayout>
+        </com.qianfanyun.ycdemo.CoordinatorLayout.nested.NestedAppBarLayout>
 
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"

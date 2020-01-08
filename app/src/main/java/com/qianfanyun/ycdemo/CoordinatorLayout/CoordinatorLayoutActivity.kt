@@ -6,6 +6,7 @@ import android.os.Bundle
 import com.qianfanyun.ycdemo.CoordinatorLayout.appbarlayout.AppBarLayoutActivity
 import com.qianfanyun.ycdemo.CoordinatorLayout.nested.CoordinatorNestActivity
 import com.qianfanyun.ycdemo.CoordinatorLayout.simple_behavior.SimpleBehaviorActivity
+import com.qianfanyun.ycdemo.CoordinatorLayout.webview.CoordinatorLayoutWebviewActivity
 import com.qianfanyun.ycdemo.R
 import kotlinx.android.synthetic.main.activity_coordinator_layout2.*
 
@@ -18,7 +19,7 @@ class CoordinatorLayoutActivity : AppCompatActivity() {
             startActivity(
                 Intent(
                     this,
-                    CoordinatorLayoutActivity::class.java
+                    CoordinatorLayoutWebviewActivity::class.java
                 )
             )
         }
