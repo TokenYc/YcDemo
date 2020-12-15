@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.VelocityTracker;
 import android.view.ViewConfiguration;
+import android.view.ViewGroup;
 import android.view.ViewParent;
 
 import androidx.annotation.NonNull;
@@ -216,9 +217,8 @@ public class NestedAppBarLayout extends AppBarLayout implements NestedScrollingC
                     break;
                 }
 
-                final int y = (int) MotionEventCompat.getY(ev, pointerIndex);
-                final int yDiff = Math.abs(y - mLastMotionY);
-                if (yDiff > mTouchSlop) {
+                final int y = (int) ev.getY();
+                if (shouldIntercepted(y - mLastMotionY)) {
                     mIsBeingDragged = true;
                     mLastMotionY = y;
                     initVelocityTrackerIfNotExists();
@@ -248,7 +248,7 @@ public class NestedAppBarLayout extends AppBarLayout implements NestedScrollingC
                  * otherwise don't.  mScroller.isFinished should be false when
                  * being flinged.
                  */
-                mIsBeingDragged = shouldIntercepted();
+                mIsBeingDragged = false;
                 startNestedScroll(ViewCompat.SCROLL_AXIS_VERTICAL);
                 break;
             }
@@ -291,7 +291,7 @@ public class NestedAppBarLayout extends AppBarLayout implements NestedScrollingC
                 if (getChildCount() == 0) {
                     return false;
                 }
-                if (shouldIntercepted()) {
+                if (shouldIntercepted(0)) {
                     final ViewParent parent = getParent();
                     if (parent != null) {
                         parent.requestDisallowInterceptTouchEvent(true);
@@ -398,16 +398,39 @@ public class NestedAppBarLayout extends AppBarLayout implements NestedScrollingC
     }
 
     /**
-     * 返回true表示要拦截事件，由AppBarLayout自身来分发Nested事件
+     * 返回true表示要拦截事件，
      * 返回false表示走NestedCoordinatorLayout的事件处理，实现折叠的效果
+     *
      * @return
      */
-    private boolean shouldIntercepted() {
-        if (getY() == 0) {
-            return true;
+    private boolean shouldIntercepted(int dy) {
+        AppBarLayout parentAppBarLayout = getParentAppBarLayout();
+        if (dy > 0) {
+            if (Math.abs(parentAppBarLayout.getY()) < parentAppBarLayout.getHeight()) {
+                return true;
+            } else {
+                if (getY() == 0) {
+                    return true;
+                }else {
+                    return false;
+                }
+            }
+        } else if (dy < 0) {
+            if (Math.abs(parentAppBarLayout.getY()) < parentAppBarLayout.getHeight()) {
+                return true;
+            } else {
+                return false;
+            }
         } else {
             return false;
         }
+    }
+
+    private AppBarLayout getParentAppBarLayout() {
+        // TODO: 2020/12/15 需要修改为全局搜索或者直接设置
+        ViewGroup viewGroup = (ViewGroup) getParent().getParent();
+        AppBarLayout parentAppBarLayout = (AppBarLayout) viewGroup.getChildAt(0);
+        return parentAppBarLayout;
     }
 
     private void onSecondaryPointerUp(MotionEvent ev) {
@@ -417,7 +440,6 @@ public class NestedAppBarLayout extends AppBarLayout implements NestedScrollingC
         if (pointerId == mActivePointerId) {
             // This was our active pointer going up. Choose a new
             // active pointer and adjust accordingly.
-            // TODO: Make this decision more intelligent.
             final int newPointerIndex = pointerIndex == 0 ? 1 : 0;
             mLastMotionY = (int) MotionEventCompat.getY(ev, newPointerIndex);
             mActivePointerId = MotionEventCompat.getPointerId(ev, newPointerIndex);
