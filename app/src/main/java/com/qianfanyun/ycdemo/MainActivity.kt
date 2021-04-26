@@ -1,8 +1,10 @@
 package com.qianfanyun.ycdemo
 
+import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.telephony.TelephonyManager
+import androidx.appcompat.app.AppCompatActivity
 import com.qianfanyun.ycdemo.CoordinatorLayout.CoordinatorLayoutActivity
 import com.qianfanyun.ycdemo.NestedScroll.NestedScrollActivity
 import kotlinx.android.synthetic.main.activity_main.*
@@ -18,6 +20,9 @@ class MainActivity : AppCompatActivity() {
         nestedScroll.setOnClickListener {
             startActivity(Intent(this, NestedScrollActivity::class.java))
         }
+        val telephonyManager =
+            getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
+        telephonyManager.deviceId
     }
 
 }
